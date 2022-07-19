@@ -1,0 +1,28 @@
+
+.error {
+  color: #dd5826;
+}
+
+.required {
+  color: red !important;
+}
+
+.widget-body {
+  width: 50%;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.float-end {
+  float: right !important;
+}
+
+.float-start {
+  float: left !important;
+}
+
+.widget {
+  margin-left: 25%;
+}

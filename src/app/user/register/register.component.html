@@ -1,0 +1,96 @@
+<div class="row">
+
+  <div class="col-sm-12 col-lg-12">
+
+    <section class="widget" widget>
+
+      <header>
+        <h3>
+          Enter the following information to create new user </h3>
+      </header>
+
+      <div class="widget-body">
+        <form (ngSubmit)="checkForm(form)" [formGroup]="form">
+          <div id="form79" class="form-horizontal form-label-left p-fluid" novalidate>
+
+            <div class="p-col p-mt-5">
+              <label>First Name <span class="required"> *</span></label>
+              <input
+                formControlName="firstName" pInputText type="text"
+                [class]="formIsInvalid && form.controls['firstName'].errors? 'ng-invalid ng-dirty': ''">
+              <div *ngIf="form.controls['firstName'].touched && form.controls['firstName'].errors" class="required">
+                First Name is required
+              </div>
+            </div>
+
+            <div class="p-col p-mt-5">
+              <label>Last Name <span class="required"> *</span></label>
+              <input
+                formControlName="lastName" pInputText type="text"
+                [class]="formIsInvalid && form.controls['lastName'].errors? 'ng-invalid ng-dirty': ''">
+              <div *ngIf="form.controls['lastName'].touched && form.controls['lastName'].errors" class="required">
+                Last Name is required
+              </div>
+            </div>
+          </div>
+
+          <div class="p-fluid p-formgrid p-grid p-ml-3 p-mr-3">
+
+            <div class="p-col p-mt-5">
+              <label>Email <span class="required"> *</span></label>
+              <input pInputText formControlName="email"
+                     [class]="formIsInvalid && form.controls['email'].errors? 'ng-invalid ng-dirty': ''">
+              <div *ngIf="form.controls['email'].touched && form.controls['email'].errors" class="required">
+                Email is required / Invalid
+              </div>
+            </div>
+
+
+          </div>
+
+          <div class="p-fluid  ml-3 ">
+            <div class="p-col-4 p-mt-5">
+              <label>Role<span class="required"> *</span></label>
+              <p-multiSelect formControlName="authorities" [options]="roles"
+                     [class]="formIsInvalid && form.controls['authorities'].errors? 'ng-invalid ng-dirty': ''">
+              </p-multiSelect>
+              <div *ngIf="form.controls['authorities'].touched && form.controls['authorities'].errors" class="required">
+                Role is required
+              </div>
+            </div>
+
+            <div class="p-col-4 p-mt-5">
+              <label>Username<span class="required"> *</span></label>
+              <input formControlName="username" pInputText type="text"
+                     [class]="formIsInvalid && form.controls['username'].errors? 'ng-invalid ng-dirty': ''">
+              <div *ngIf="form.controls['username'].touched && form.controls['username'].errors" class="required">
+                Username is required / Invalid
+              </div>
+            </div>
+
+            <div class="p-col-4 p-mt-5">
+              <label>Password<span class="required"> *</span></label>
+              <input formControlName="password" type="password" pInputText
+                          [class]="formIsInvalid && form.controls['password'].errors? 'ng-invalid ng-dirty': ''">
+              <div *ngIf="form.controls['password'].touched && form.controls['password'].errors" class="required">
+                Password is required / Invalid
+              </div>
+            </div>
+          </div>
+
+          <div class="row  mt-10">
+          <div class="form-actions">
+            <button pButton [loading]="isLoading" icon="pi pi-check"
+                      iconPos="right" label="Submit" class="p-button-raised p-button-success float-start" type="submit"></button>
+            <button type="button" pButton class="p-button-raised p-button-secondary float-end" (click)="routeToList()"
+                    icon="pi pi-times" label="Cancel"></button>
+
+          </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+</div>
+
+
